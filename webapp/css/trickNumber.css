@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+.correct, .aa, .ab, .ac, .ad, .ae, .af, .ag, .ah, .ai, .aj, .ak, .al, .am, .an, .ao, .ap, .aq, .ar, .as, .at, .au, .av, .aw, .ax, .ay, .az, .ba, .bb, .bc, .bd {
+	cursor: pointer;
+}
+
+
+.relative {
+	position: relative;
+}
+
+.hr-top {
+	position: absolute;
+	top: 18vw;
+	left: 23vw;
+}
+
+
+.aa {
+	position: absolute;
+	top: 20vw;
+	left: 25vw;
+}
+
+.ab {
+	position: absolute;
+	top: 20vw;
+	left: 65vw;
+}
+
+.ac {
+	position: absolute;
+	top: 40vw;
+	left: 25vw;
+}
+
+.ad {
+	position: absolute;
+	top: 40vw;
+	left: 65vw;
+}
+
+.ae {
+	position: absolute;
+	top: 24vw;
+	left: 61vw;
+}
+
+.af {
+	position: absolute;
+	top: 24vw;
+	left: 43vw;
+}
+
+.ag {
+	position: absolute;
+	top: 32vw;
+	left: 59vw;
+}
+
+.ah {
+	position: absolute;
+	top: 21vw;
+	left: 41vw;
+}
+
+.ai {
+	position: absolute;
+	top: 22vw;
+	left: 51vw;
+}
+
+.aj {
+	position: absolute;
+	top: 28vw;
+	left: 46vw;
+}
+
+.ak {
+	position: absolute;
+	top: 29vw;
+	left: 39vw;
+}
+
+.al {
+	position: absolute;
+	top: 25vw;
+	left: 33vw;
+}
+
+.am {
+	position: absolute;
+	top: 27vw;
+	left: 38vw;
+}
+
+.an {
+	position: absolute;
+	top: 38vw;
+	left: 61vw;
+}
+
+.ao {
+	position: absolute;
+	top: 21vw;
+	left: 35vw;
+}
+
+.ap {
+	position: absolute;
+	top: 29vw;
+	left: 53vw;
+}
+
+.aq {
+	position: absolute;
+	top: 29vw;
+	left: 31vw;
+}
+
+.ar {
+	position: absolute;
+	top: 25vw;
+	left: 28vw;
+}
+
+.as {
+	position: absolute;
+	top: 34vw;
+	left: 51vw;
+}
+
+.at {
+	position: absolute;
+	top: 31vw;
+	left: 41vw;
+}
+
+.au {
+	position: absolute;
+	top: 37vw;
+	left: 38vw;
+}
+
+.av {
+	position: absolute;
+	top: 34vw;
+	left: 33vw;
+}
+
+.aw {
+	position: absolute;
+	top: 27vw;
+	left: 57vw;
+}
+
+.ax {
+	position: absolute;
+	top: 35vw;
+	left: 41vw;
+}
+
+.ay {
+	position: absolute;
+	top: 36vw;
+	left: 52vw;
+}
+
+.az {
+	position: absolute;
+	top:36vw;
+	left: 58vw;
+}
+
+.ba {
+	position: absolute;
+	top: 35vw;
+	left: 26vw;
+}
+
+.bb {
+	position: absolute;
+	top: 40vw;
+	left: 55vw;
+}
+
+.bc {
+	position: absolute;
+	top: 29vw;
+	left: 60vw;
+}
+
+.bd {
+	position: absolute;
+	top: 38vw;
+	left: 47vw;
+}
+
