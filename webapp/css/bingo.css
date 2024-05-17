@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.container {
+	text-align: center;
+	padding-top: 3vw;
+}
+
+table {
+	text-align: center;
+	margin: 0 auto;
+	border-spacing: 2vw;
+}
+
+table td {
+	width: 3vw;
+	text-align: center;
+}
+
+.red {
+	color: red;
+}

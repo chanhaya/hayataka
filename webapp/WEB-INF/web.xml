@@ -1,0 +1,56 @@
+<web-app>
+	<servlet>
+		<servlet-name>diagnosisMatchMapping</servlet-name>
+		<servlet-class>servlet.DiagnosisMatchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>diagnosisMatchMapping</servlet-name>
+		<url-pattern>/diagnosisMatch</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>randomNumberMapping</servlet-name>
+		<servlet-class>servlet.RandomNumberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>randomNumberMapping</servlet-name>
+		<url-pattern>/randomNumber</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>trickNumberMapping</servlet-name>
+		<servlet-class>servlet.TrickNumberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>trickNumberMapping</servlet-name>
+		<url-pattern>/trickNumber</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>bingoMapping</servlet-name>
+		<servlet-class>servlet.BingoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bingoMapping</servlet-name>
+		<url-pattern>/bingo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>mazeMapping</servlet-name>
+		<servlet-class>servlet.MazeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mazeMapping</servlet-name>
+		<url-pattern>/maze</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>normalMazeMapping</servlet-name>
+		<servlet-class>servlet.NormalMazeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>normalMazeMapping</servlet-name>
+		<url-pattern>/normalMaze</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
