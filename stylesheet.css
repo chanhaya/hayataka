@@ -1,29 +1,6 @@
-* {
-  box-sizing: border-box;
-}
+@charset "UTF-8";
 
-body {
-  margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
+.container{
+	margin-left: 30vw;
+	margin-top: 5vw
 }
-
-a {
-  text-decoration: none;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.container {
-  width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.top-wrapper {
-  padding: 180px 0 100px 0;
-  background-image: url(top.png);
-  background-size: cover;
-  color: white;
-  text-align: center;
-}
-
