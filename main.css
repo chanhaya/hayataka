@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fffdfa;
+}
+
+.container{
+	margin-left: 30vw;
+	margin-top: 5vw
+}
+
+.big-image {
+	margin-top: 1vw;
+	object-fit: cover;
+	height: 30vw;
+	width: 30vw;
+	border: solid 1px blue;
+}
+
+.small-image {
+	margin-top: 1vw;
+	object-fit: contain;
+	height: auto;
+	width: 30vw;
+	border: solid 1px blue;
+}
