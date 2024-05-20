@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>いじわる数字探しゲーム</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>いじわる数字探しゲーム</h2>
+		<h3>【内容】</h3>
+		<hr width="50%" align="left" color="green"><br>
+		ランダムに選ばれた31個の数字から中間(16番目)を探し出すゲーム。<br>
+		のように見せかけた「いじわる」な数字探しゲーム。<br>
+		中央の数字を数えると30個しかありません。<br>
+		そのことからもう一つ数字があるのではと考えて、<br>
+		「数字を探せ31」の31も含めることに気付く必要がある。<br>
+		そしてその31をクリックすると正解というゲームです。<br>
+		
+		<img class="small-image" src="img/trickNumber1.png">
+		
+		<h3>【構成】</h3>
+		<hr width="50%" align="left" color="green"><br>
+		31が中間の数字になるように「1〜30」「32〜61」の数字を15ずつ格納する配列を2つ用意<br>
+		↓<br>
+		ArrayListのcontainsメソッドを用いて<br>
+		結果がfalse(数字の被りがない)なら数値を格納するArrayListに格納<br>
+		↓<br>
+		1つ前の作品と違い最小,最大は関係なく、答えも決まっているためソートはせずに完成
+		<br><br>
+		
+		<h3>【工夫や学び】</h3>
+		<hr width="50%" align="left" color="green"><br>
+		1つ前の作品では経過時間がinput内にあるのが納得しておらず(そのやり方しかわからず)、<br>
+		その点を今回改良することができました。<br>
+		あとは31にカーソルを持っていくとカーソルの形が変わるようにしてみました。
+		<img class="small-image" src="img/trickNumber2.png">
+	</div>
+</body>
+
+</html>
