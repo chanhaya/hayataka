@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>文字位置ランダム</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>文字位置ランダム</h2>
+		<h3>【内容】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		「数字選択ゲーム」「いじわる数字選択ゲーム」はどちらも<br>
+		数字の表示される位置は固定された仕様になっています(やり方がわからなかったので)。<br>
+		その点から表示位置をランダムにできるのかを試してみたプログラムになります。<br><br>
+
+		<h3>【構成】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		表示位置(座標)をランダムにするためにx座標とy座標をMathクラスのrandomメソッドで生成する<br>
+		<br>↓<br><br>
+		実験１：position relative と absolute を用いてみる(テスト0〜テスト2)<br>
+		※Javaで生成した数値を変数に入れたいため埋め込み式のcssを採用しました<br>
+		<br>
+		実験２：margin-topとmargin-leftの値をランダムに指定してみる(テスト3〜テスト5)
+		<br><br>
+
+		<h3>【工夫や学び】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		数字をランダムに生成できれば(今回はJava)文字位置をランダムにできることがわかりました。<br>
+		しかしHTMLやCSSしか知らない場合はできないのでしょうか？と疑問は増えました<br>
+		また実験１の場合、座標によっては文字が被ってしまうのは解決の必要があると感じました。<br>
+		実験２の場合は前の数字の下に位置するため、<br>
+		数字が増えるとその分だけ縦幅が増えてスクロールの必要性が増してしまうのがネックと感じました。<br>
+		※position relativeやabsoluteではないため、<br>
+		数字3より下の位置に数字4、数字4の下に数字5が表示されるという意味です<br>
+		<img class="small-image" src="img/randomPosition.png">
+	</div>
+</body>
+
+</html>
