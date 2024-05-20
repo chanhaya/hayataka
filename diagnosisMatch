@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>相性診断</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>相性診断</h2>
+		<h3 class="left">【内容】</h3>
+		<p>機能については下記の添付どおりになり、<br>
+			2人の名前を入力することで相性を数値にして表示します(高い点数の方を)</p>
+		<img src="img/diagnosis1.png" class="big-image">
+
+		<h3>【工夫点】</h3>
+		入力された名前をすべて小文字に変換(大文字で齟齬が生じないよう)<br>
+		↓<br>
+		数値に変換するために1文字ずつに分割<br>
+		↓<br>
+		アルファベット表を文字列として変数に代入し、該当アルファベットが何番目に来るかを<br>
+		indexOfメソッドを用いて算出<br>
+		<br>
+		当初はaであれば1、bであれば2とその数の分だけif文を記述しようとしたため、<br>
+		メソッドを駆使してソースコードを短くわかりやすくできたとおもっています<br>
+		<img src="img/diagnosis2.png" class="small-image"><br>
+		<img src="img/diagnosis3.png" class="big-image">
+	</div>
+
+</body>
+
+</html>
