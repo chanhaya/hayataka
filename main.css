@@ -16,6 +16,7 @@ body {
 
 .big-image {
 	margin-top: 1vw;
+	margin-bottom: 2vw;
 	object-fit: cover;
 	height: 30vw;
 	width: 30vw;
@@ -24,6 +25,7 @@ body {
 
 .small-image {
 	margin-top: 1vw;
+	margin-bottom: 2vw;
 	object-fit: contain;
 	height: auto;
 	width: 30vw;
