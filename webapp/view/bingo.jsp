@@ -74,7 +74,7 @@ if(game.equals("new")) {
 				var number = document.getElementById('number').value;
 				if(number % 2 == 0) {
 					alert("偶数が入力されています");
-					false;
+					return false;
 				} 
 			}
 		</script>
