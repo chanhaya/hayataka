@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>数字探しゲーム</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>数字探しゲーム</h2>
+		<h3>【内容】</h3>
+		<hr width="50%" align="left" color="green"><br>
+		1〜100の中からランダムに選ばれた31個の数字から<br>
+		最小、最大、中間(16番目)を探し出すゲーム。<br>
+		優劣をつけることができる仕様にしたかったため、開始してからの時間を記録。<br>
+		最小最大だけだと(1と100)が出たら簡単になり、<br>
+		10番台から80番台あたりも正直意味がなくなってしまうため中間も求める仕様に。
+		<img class="small-image" src="img/randomNumber1.png">
+		
+		<h3>【構成】</h3>
+		<hr width="50%" align="left" color="green"><br>
+		Mathのrandomメソッドを用いて1〜100のランダムな数値を生成<br>
+		↓<br>
+		ArrayListのcontainsメソッドを用いて<br>
+		結果がfalse(数字の被りがない)なら数値を格納するArrayListに格納<br>
+		↓<br>
+		最小,最大,中間が知りたいため、<br>
+		31の数値を格納した配列をバブルソートを用いて昇順に並び替える<br>
+		<br>
+		
+		<h3>【工夫や学び】</h3>
+		<hr width="50%" align="left" color="green"><br>
+		最初はfor文を使ってArrayListから1つずつ値を抜き出し、<br>
+		生成した数値と重複するか確かめるコードを記述しました。<br>
+		しかし都度for文を用いるのは無駄が多いと感じ調べたところ、<br>
+		containsメソッドを学びこちらに変更しました。<br>
+		<br>
+		答え合わせの際にservletに数値を投げると、<br>
+		servletが機能して表示されている数値が一新されてしまいました。<br>
+		それを打破するためにJavaScriptを取り入れてページ遷移なしで答え合わせができるようにしました。<br>
+		経過時間表示についてもJavaScriptで作成しています。<br>
+		<img class="small-image" src="img/randomNumber2.png">
+	</div>
+</body>
+
+</html>
