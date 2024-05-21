@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>連立方程式</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>連立方程式</h2>
+		<h3>【内容】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		中学生レベルの連立方程式をプログラミングしてみた。<br>
+		<br>
+		<img class="small-image" src="img/track1.png"><br>
+		<br>
+
+		<h3>【構成】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		問1<br>
+		①「トラックの距離」②「Aの速さ/分」③「Bの速さ/分」<br>
+		をランダムに算出する(AとBの速さ同じにならずAの方が早くなる仕様)<br>
+		↓<br>
+		割り切れるとも限らないので秒速を算出しておく<br>
+		↓<br>
+		② + ③ = ① の場合に合流なので、<br>
+		式に基づいて答えを算出する<br>
+		<br>
+		問2<br>
+		①「トラックの距離」②「反対方向から走って合流する時間」③「同じ方向に走って合流する時間」<br>
+		をランダムに算出する<br>
+		↓<br>
+		a(②) b(③) c(①) x(Aの速さ) y(Bの速さ) とすると<br>
+		ax + ay = c(問1と同じく反対方向に走って合流) <br>
+		bx - by = c(同じ方向に走って合流 = 1周差をつけた) <br>
+		組み替えると<br>
+		x = (ac + bc) / 2ab<br>
+		y = (bx - c) / b <br>
+		となるのでこの式に当てはめて答えを算出する<br>
+		<br>
+		問3<br><br>
+		①「トラックの距離」②「Aの速さ/分」③「Bの速さ/分」<br>
+		を先に算出して問題を作ってみる<br>
+		↓<br>
+		問2でいえば x(②)とy(③)がすでにわかっているので<br>
+		ax + ay = c<br>
+		bx - by = c<br>
+		から時間(aとb)をそれぞれ求める<br>
+		
+		<br><br>
+
+		<h3>【工夫や学び】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		問2でアルゴリズムを式に落とし込むことができて嬉しかった。<br>
+		しかしこのアプリにおいては「時間」を先に定めてしまうと、<br>
+		答えのAとBの速さが人外な数値になってしまい現実的ではないと感じた<br>
+		となると問題生成アプリを作成するのであれば問3のように<br>
+		答えを先に作りそれに合わせて問題を作るの方が違和感がなく、<br>
+		式も複雑ではなくて簡単ではないかと感じた製作であった。<br>
+		<img class="small-image" src="img/track2.png">
+	</div>
+</body>
+
+</html>
