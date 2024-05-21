@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>迷路</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>迷路</h2>
+		<h3>【内容】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		(入力数値 × 入力数値)マスの迷路を作成する。<br>
+		0は通れず1が通れる仕様で、左や下に曲がる複雑性はなし。<br>
+		作成するとは名ばかりでSからGにつながる道を作るプログラミングという方が正しい。<br>
+		<img class="small-image" src="img/maze1.png"><br>
+		<br>
+
+		<h3>【構成】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		(入力数値 × 入力数値)の数の分だけInteger型のArrayListに「2」を代入する<br>
+		スタート位置だけ「1」を代入する<br>
+		↓<br>
+		0か1はMathクラスのrandomメソッドで決める<br>
+		スタートの次の進める位置(2箇所)がどちらも0の場合はやりなおし、<br>
+		どちらも1の場合は上が優先される。<br>
+		↓<br>
+		左や下に進まないため<br>
+		最上段に来たら右に進むだけ、最右列に来たら上に進むだけ(上に1を代入し続ける)となる。<br>
+		それ以外の箇所は上か右方向のどちらかに「1」が出るまでwhile文で無限ループする、<br>
+		をGにたどり着くまで繰り返す。<br>
+		<img class="small-image" src="img/maze2.png">
+		<br><br>
+
+		<h3>【工夫や学び】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		次作の迷路は左や下にも進む仕様にしたのだが、<br>
+		それと対比するとなんとも簡単な仕様である。<br>
+		特に今作は「1」が出るまで無限ループして道を確実に切り開くため、<br>
+		上に進んだら右のルートはもう関係がなくなってしまう。<br>
+		また最後に関与しなかった「2」に0か1をランダムに割り当てるため、<br>
+		意図せず複数の答えルートができてしまう可能性が残ってしまっている。<br><br><br>
+	</div>
+</body>
+
+</html>
