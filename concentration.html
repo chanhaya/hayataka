@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>神経衰弱</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>神経衰弱</h2>
+		<h3>【内容】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		神経衰弱のアプリです<br>
+		柄は関係なくカードをめくり同じ数字を揃えてください<br>
+		2枚めくるとターン数が1増え数字が揃っていない場合は裏面に戻ります<br>
+		<img class="small-image" src="img/concentration1.png">
+		<br><br>
+
+		<h3>【構成】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		ページを開いた段階で「new」というパラメータが送信されてゲームが開始し、<br>
+		2重ループでPlayingCardsインスタンス<br>
+		(①String型で柄, ②int型で数字, ③int型でめくられているかのフラグ値,<br>
+		④boolean型でペア成立しているかのフィールドを持つ)を<br>
+		カードの枚数分52枚作成する。<br>
+		↓<br>
+		1~13と規則正しく並んでしまっているので、<br>
+		Collectionsクラスのshuffleメソッドで順番をまぜて、<br>
+		セッションに登録して表示する。<br>
+		↓<br>
+		カード選択時に「select」というパラメータが送信されて、<br>
+		ゲーム開始時と区別をする。<br>
+		パラメータから選択カードを受け取り、③のフラグ値を変更する。<br>
+		selectCards(1, 2枚目に選ばれたカードを格納するArrayList)をセッションから受け取る。<br>	
+		↓<br>
+		<br>
+		selectCardsが<br>
+		・0枚なら1枚目としてselectCardsに追加<br>
+		・2枚なら破棄して今回の選択カードをselectCardsに追加<br>
+		※ここで破棄しないと2枚目選択時に2枚目が表にならずに次ターンになってしまう<br>
+		・1枚なら今回の選択カードと数字がいっしょかを判定し、<br>
+		一緒ならペア値をtrueに変更する。<br>
+		<br>
+		を繰り返します。<br>
+		<img class="small-image" src="img/concentration2.png"><br>
+		<img class="small-image" src="img/concentration3.png">
+		<br><br>
+
+		<h3>【工夫や学び】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		最初は①の柄についてもint型でフラグにした。<br>
+		しかし画像表示のためのaタグにおいて、<br>
+		フラグが0ならspade, 1ならclub<br>
+		といったif文を4つ追記する必要が出たためString型の値にした。<br>
+		また同様にカードの保存名も「spade01」だったものを、<br>
+		このままだと<br>
+		インスタンスが持つ数字が9以下なら0を追記する<br>
+		というif文を追加しないといけないため少し気持ち悪いが「0」が削除した。<br>
+		他にもめくったカードをもう一度押して選択できるとややこしいので、<br>
+		選択できないようにしたり【構成】の ※ の箇所など、<br>
+		様々な工夫を凝らすことができて作成して楽しむことができた。<br>
+		<img class="small-image" src="img/concentration4.png">
+	</div>
+</body>
+
+</html>
