@@ -53,4 +53,13 @@
 		<url-pattern>/normalMaze</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>concentrationMapping</servlet-name>
+		<servlet-class>servlet.ConcentrationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>concentrationMapping</servlet-name>
+		<url-pattern>/concentration</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
