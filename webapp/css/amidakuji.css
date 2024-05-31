@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+.table {
+	margin-left: 0.5rem;
+	border-collapse: collapse;
+}
+
+.table td {
+	margin-right: 0.5rem;
+	border-left: 1px solid gray;
+	width: 1.3rem;
+	height: 20px;
+}
+
+.amida {
+	margin-left: 3rem;
+	border-collapse: collapse;
+	margin-left: 3rem;
+}
+
+.amida td {
+	margin-right: 1.3rem;
+	border-left: 1px solid gray;
+	width: 8rem;
+	height: 20px;
+}
+
+.number {
+	margin-left: 2.8rem;
+	margin-right: 4.3rem;
+}
+
+.cursor {
+	cursor: pointer;
+}
+
+span {
+	margin-right: 0.9rem;
+}
+
+img {
+	width: 8vw;
+	height: 9vw;
+	margin-right: 0.5rem;
+}
+
+.center {
+	padding-top: 2rem;
+	margin-left: 15rem;
+}
+
+.container {
+	padding-top: 1rem;
+	margin-left: 5rem;
+}
+
+.form {
+	margin-left: 10rem;
+}
+
+.result {
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 4vw;
+}
+
+.result img {
+	width: 30vw;
+	height: 30vw;
+}
+
+.mimic {
+	color: red;
+}
+
+.treasure {
+	color: orange;
+}
+
+.blink {
+	animation: blinking 1s ease-in-out infinite alternate;
+}
+ 
+@keyframes blinking {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
