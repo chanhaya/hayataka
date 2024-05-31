@@ -62,4 +62,13 @@
 		<url-pattern>/concentration</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>amidakujiMapping</servlet-name>
+		<servlet-class>servlet.AmidakujiServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>amidakujiMapping</servlet-name>
+		<url-pattern>/amidakuji</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
