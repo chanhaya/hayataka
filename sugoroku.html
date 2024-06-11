@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>すごろく</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>すごろく</h2>
+		<h3>【内容】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		名前を入力したらすごろくのフィールド(64マス)が生成される。<br>
+		62〜64マスは「10マス戻る」で固定になり、それ以外のマスはランダムに決まる。<br>
+		CPを相手にサイコロを交互に振り、アイテムを駆使して先にゴールすれば勝ちというゲーム。<br>
+		特別なルールは↓添付を参照。<br>
+		<img class="small-image" src="img/sugoroku1.png">
+		<br><br>
+
+		<h3>【構成】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		名前を入力して送信することで、<br>
+		併せてactionというパラメータに「make」というvalueを付けてサーブレットに送信。<br>
+		↓<br>
+		ユーザーとCPのSugorokuUserインスタンスを生成。<br>
+		すごろくのフィールドを生成するが、<br>
+		このとき62〜64の3マスは「10マス戻る」に固定。<br>
+		それ以外の61マスは確率でランダムに決まる。<br>
+		ユーザー, CP, フィールドをセッションに登録し、<br>
+		actionパラメータに「game」valueを付けてjspへ。<br>
+		※40%:なにもなし 19%:アイテム獲得 1%:スタートに戻る<br>
+		&ensp;&ensp;5% × 8:(1,2,3,4)マス(戻る,進む)<br>		
+		↓<br>
+		ユーザーのターンから始まり、サイコロを振る。<br>
+		actionパラメータに「game」valueを付けてサーブレットへ。<br>
+		↓<br>
+		進んだ先が効果マスでないなど※の場合、<br>
+		プレイヤーとCPのターンフラグを変更し、<br>
+		actionパラメータに「game」valueを付けてjspへ。<br>
+		※1ターンの間に効果マスの3度目やアイテムマス2回目のとき<br>
+		<br>
+		進んだ先が効果マスの場合は、<br>
+		actionパラメータに「effect」valueを付けて再度サーブレットの処理。<br>
+		↓<br>
+		2周目以降はアイテムがあればアイテムを使える。<br>
+		その場合はサイコロを振る前にアイテムを使用すると、<br>
+		actionパラメータに「item」valueを付けてサーブレットへ送る。<br>
+		↓<br>
+		アイテムの処理をして、<br>
+		actionパラメータに「game」valueを付けてjspへ。<br>
+		アイテムは<br>
+		・サイコロ2つ<br>
+		・次の目が6になる<br>
+		・位置交換<br>
+		・相手のアイテムをランダムに1つ破壊する<br>
+		・相手を6マス戻す<br>
+		・どちらかが10マス戻る<br>
+		・相手が1回休み<br>
+		のラインナップ<br>
+		↓<br>
+		どちらかがゴールにたどり着くまで上記を繰り返す。<br>
+		
+		<img class="small-image" src="img/sugoroku2.png"><br>
+		<img class="small-image" src="img/sugoroku3.png"><br>
+		<img class="small-image" src="img/sugoroku4.png"><br>
+		<img class="small-image" src="img/sugoroku5.png">
+		<br><br>
+
+		<h3>【工夫や学び】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		userとcpをセッションで取得するとその都度、<br>
+		if(userのターン) {<br>
+		<br>
+		} else(cpのターン) {	<br>	
+		<br>
+		}<br>
+		と同じ処理を書いてしまっていた。<br>
+		その冗長さをどうにかできないかと考えたところ、<br>
+		userとcpの変数をさらにplayerとopponentという変数にいれれば<br>
+		解決するのではないかと考えて実践した。<br>
+		結果としてはうまくいって行数を減らすことができたし、<br>
+		変更点があっても2箇所直す必要がなくなった。<br>
+		これを読んでなにを当然のことを、とおもうかもしれないが、<br>
+		私は変数に入れたものを再度変数に入れるということを無意識に避けていた気がする。<br>
+		その発想を打破することができて成長を感じているし、<br>
+		作成において他にもたくさんの工夫を凝らしたので、<br>
+		時間があればソースコードの方をご覧いただきたい。<br>
+		
+		<img class="small-image" src="img/sugoroku6.png"><br>
+		<img class="small-image" src="img/sugoroku7.png"><br>
+		<img class="small-image" src="img/sugoroku8.png>
+		
+	</div>
+</body>
+
+</html>
