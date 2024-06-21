@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>神経衰弱</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div class="container">
+		<h2>神経衰弱</h2>
+		<h3>【内容】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		以前作成した神経衰弱をアップデートさせました。<br>
+		画面前に2人いれば2人のプレイヤーとして対人戦、<br>
+		もしくはCPとの対戦が可能になっています。<br><br>
+		<img style="width: 30%; border: 1px solid blue;" src="img/vsConcentration1.png">
+		<img style="width: 30%; border: 1px solid blue;" src="img/vsConcentration2.png">
+		<br><br>
+
+		<h3>【構成】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		【サーブレット側】<br>
+		&ensp;&ensp;「game」というパラメータの値によって処理が変わっていきます。<br><br>
+		・「game」のパラメータが「choice」のとき<br>
+		→「CP戦」か「対人戦」かの選択画面。<br><br>
+		・「name」のとき<br>
+		→「対人戦」を選択した後のplayer2人の名前入力画面。<br><br>
+		・「new」のとき<br>
+		→Integer型のArrayListを作成してfor文で0〜51の数字を代入。<br>
+		→Collectionのshuffleメソッドを使って数字の順番をシャッフル。<br>
+		→PlayingCards(トランプ)インスタンスの「位置」フィールドにシャッフルした数字をset。<br>
+		→sortメソッドで位置を0〜51に並び替えることでトランプがシャッフルされる仕様。<br>
+		→残り枚数を把握するためにcloneメソッドで変数「copyCards」を作成。<br>
+		→プレイヤーとCPのUserインスタンスを生成して、<br>
+		&ensp;&ensp;トランプ&コピー&プレイヤー&CPをセッションに登録します。<br><br>
+		・「versus」のとき<br>
+		→「new」と同じ処理をたどりif(versusの場合)によって、<br>
+		&ensp;&ensp;request.getParameterによる名前の設定とランダムに順番を決める処理が追加されています。<br><br>
+		・「select」のとき(CP戦時にユーザーおよびCPがカードを選択したとき)<br>
+		→Userインスタンスの「ターン」フィールドにてどちらのターンか判断し、変数に代入します。<br>
+		→選択されたカードが持つ「めくられたかどうか」の値をめくられたに変更。<br>
+		→☆CPの持つ記憶(トランプ型のArrayList)にそのカードが重複しないなら追加し、<br>
+		&ensp;&ensp;記憶のサイズが6を超える場合はremoveFirstメソッドで先にめくられたカードから忘却させます。<br>
+		→トランプ型ArrayListの「selectCards」にめくられたカードを追加します。<br>
+		&ensp;&ensp;「selectCards」が2枚になったら数字が一致しているかを判断し、<br>
+		&ensp;&ensp;一致しているならペア値を+1して「copyCards」から削除、していないなら手番を交代します。<br>
+		→☆CPの持つ記憶内でペアが完成している場合<br>
+		&ensp;&ensp;もしくは<br>
+		&ensp;&ensp;ランダムに引いた1枚目の数字と同じ数字を記憶している場合は、<br>
+		&ensp;&ensp;次にめくるカードをそのカードに設定します。<br>
+		&ensp;&ensp;記憶内にない場合は「copyCards」の中から1枚をランダムに選択してそのカードをめくります。<br><br>
+		・「vs」のとき(対人戦でカードを選択したとき)<br>
+		→「select」の☆以外の処理を行います。<br><br>
+		【JSP側】<br>
+		&ensp;&ensp;トランプの「めくられた」or「ペア」の値によって表示の表裏面を設定し、<br>
+		&ensp;&ensp;「めくられた」の場合は枠に色を付けていまどこがめくられたかわかりやすくしています。<br>
+		&ensp;&ensp;CPの手番についてはJavaScriptを用いて時間経過でサーブレットを呼び出す処理にすることで、<br>
+		&ensp;&ensp;CPと対戦ができるような仕様になっています。<br>
+		&ensp;&ensp;「CopyCards」が0枚になったらペア値を比較して勝者を判定します。<br>		
+		<img class="small-image" src="img/vsConcentration5.png"><br>
+		<img class="small-image" src="img/vsConcentration6.png">
+		<br><br>
+
+		<h3>【工夫や学び】</h3>
+		<hr width="70%" align="left" color="green"><br>
+		ラムダ式(シャッフルしたトランプを配置順に並べ替えるとき)、ラベル(CPの記憶内にペアがあるか探すとき)<br>
+		を使う場面があり技術面で新たに学びを得ることができました。<br>
+		読みづらいとはおもいますが「CP戦」と「対人戦」をまるまる2つ記述するのではなく、<br>
+		必要な場面のみ分岐させることができてこれも思考訓練になったと感じています。<br>
+		CPはランダムに好きな位置をめくってくるため覚えづらいですし、<br>
+		直近6枚目まで完全に記憶してくるため私は結構接戦になります。<br>
+		<img class="small-image" src="img/vsConcentration3.png"><br>
+		<img class="small-image" src="img/vsConcentration4.png">
+	</div>
+</body>
+
+</html>
