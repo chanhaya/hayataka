@@ -9,13 +9,16 @@ public class PlayingCards {
 	private int select;
 	// 揃っている状態かどうか(Trueならペア済み)
 	private boolean pair;
+	// 自分の配置
+	private int position;
 	
 	// コンストラクタ(引数なし)
 	public PlayingCards() {
-		num = -1;
-		pattern = null;
-		select = 0;
-		pair = false;
+		this.num = -1;
+		this.pattern = null;
+		this.select = 0;
+		this.pair = false;
+		this.position = -1;
 	}
 	
 	// アクセサメソッド
@@ -43,6 +46,13 @@ public class PlayingCards {
 	public void setPair(boolean pair) {
 		this.pair = pair;
 	}
-	
-	
+
+	public int getPosition() {
+		return position;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+
 }
