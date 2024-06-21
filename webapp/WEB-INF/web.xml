@@ -80,4 +80,13 @@
 		<url-pattern>/sugoroku</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>vsConcentrationMapping</servlet-name>
+		<servlet-class>servlet.VsConcentrationServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>vsConcentrationMapping</servlet-name>
+		<url-pattern>/vsConcentration</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
